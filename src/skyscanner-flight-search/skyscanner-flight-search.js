@@ -1,11 +1,11 @@
 (async() => {
-    const res = await fetch('../src/skyscanner-flight-search/skyscanner-flight-search.html');
+    //const res = await fetch('../src/skyscanner-flight-search/skyscanner-flight-search.html');
 
-    // const htmlPath = new URL(
-    //     './skyscanner-flight-search.html',
-    //     import.meta.url,
-    // );
-    //const res = await fetch(htmlPath);
+    const htmlPath = new URL(
+        './skyscanner-flight-search.html',
+        import.meta.url,
+    );
+    const res = await fetch(htmlPath);
 
     const textTemplate = await res.text();
 

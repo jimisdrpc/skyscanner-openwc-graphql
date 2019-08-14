@@ -7,7 +7,12 @@ describe('skyscanner flight search', () => {
         const el = await fixture(html `
       <skyscanner-flight-search></skyscanner-flight-search>
     `);
-        el.shadowRoot.querySelector('#firstdiv');
-        expect(el).to.exist;
+        console.debug('before promisse');
+        window.customElements.whenDefined('skyscanner-flight-search').then(() => {
+            el.shadowRoot.querySelector('#firstdiv2');
+            console.debug('after promisse');
+            expect(el).to.exist;
+
+        });
     });
 });
